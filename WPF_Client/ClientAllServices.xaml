@@ -1,0 +1,31 @@
+﻿<Page x:Class="WPF_Client.ClientAllServices"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF_Client"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="ClientAllServices">
+
+    <Grid x:Name="DataGrid">
+        
+        <Button x:Name="viewAllServicesButton" Content="View All Services" HorizontalAlignment="Left" Margin="35,379,0,0" VerticalAlignment="Top" Width="160" FontSize="18" Height="43" Click="ViewAllServices_Click"/>
+        
+        <Button x:Name="testButton" Content="Test" HorizontalAlignment="Left" Margin="611,379,0,0" VerticalAlignment="Top" Width="160" FontSize="18" Height="43" Click="TestService_Click"/>
+        <StackPanel x:Name="stackPanelName">
+            <Label x:Name="welcomeLabel" Content="Welcome User!" HorizontalAlignment="Left" Margin="296,10,0,0" VerticalAlignment="Top" FontSize="32"/>
+            <TextBox x:Name="searchQueryTextBox" HorizontalAlignment="Left" Height="43" Margin="35,7,0,0" TextWrapping="WrapWithOverflow" Text="Search name..." VerticalAlignment="Top" Width="506" FontSize="16"/>
+            <Button x:Name="searchServiceButton" Content="Search" HorizontalAlignment="Right" Margin="0,0,35,10" VerticalAlignment="Top" Width="160" FontSize="18" Height="43" Click="SearchServices_Click"/>
+            <DataGrid x:Name="allServicesDataGrid" ItemsSource="{Binding }" AutoGenerateColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" SelectionChanged="allServicesDataGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="name" MinWidth="150" Binding="{Binding name}"/>
+                    <DataGridTextColumn Header="description" MinWidth="150" Binding="{Binding description}"/>
+                    <DataGridTextColumn Header="serviceEndPoint" MinWidth="150" Binding="{Binding serviceEndPoint}"/>
+                    <DataGridTextColumn Header="numberOfOperands" MinWidth="150" Binding="{Binding numberOfOperands}"/>
+                    <DataGridTextColumn Header="operandType" MinWidth="150" Binding="{Binding operandType}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>
