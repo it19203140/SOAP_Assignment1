@@ -1,5 +1,3 @@
-Curtin ID : 20520193
-IT number : IT19203140
 Name with initials : K.S.Jayasekera
 
 
